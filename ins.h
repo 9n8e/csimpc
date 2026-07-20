@@ -1,5 +1,5 @@
 typedef struct {
-	void (*do)(void*); // ->doIt() reference
+	void (*do)(void*);
 	int code;
 	int args;
 } instruction;
