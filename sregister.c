@@ -30,8 +30,22 @@ void register_mov(sregister *self, int value) {
 void *reg_alloc(size_t size) {
         if ((size + poolOffset) > REGISTER_POOL_SIZE) return NULL;
         void* ptr = &sregisterPool[poolOffset];
+	allocatedPool[poolOffset] = true;
         poolOffset += size;
         return ptr;
+}
+
+sregister** get_registers() {
+	sregister** list = NULL;
+
+	for (size_t i = 0; i < REGISTER_POOL_SIZE; i++) {
+		if (allocatedPool[i] == true) {
+			sregister* ref = (sregister*)&sregisterPool[i];
+			printf("name: %s, val: %d\n", ref->name, ref->value);
+		}
+	}
+
+	return list;
 }
 
 sregister* make_register(char *name) {
