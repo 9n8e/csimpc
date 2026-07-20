@@ -10,6 +10,8 @@ void parseIn(char* input) {
 		printf("options: %s\n", instructions);
 	} else if (strcmp(input, "make") != 0 & currentRegister == NULL) {
 		printf("you need a register initialized in order to use this simulator, send `make` to initialize one!\n");
+	} else if (strcmp(input, "all") == 0) {
+		get_registers();
 	} else {
 		printf("unrecognized input `%s`\n", input);
 	}
