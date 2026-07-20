@@ -5,4 +5,4 @@
 #include "sregister.h"
 #include "ins.h"
 
-char* parseIn(char*);
+void parseIn(char*);

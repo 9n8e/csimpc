@@ -1,6 +1,6 @@
 #include "int.h"
 
-char* parseIn(char* input) {
+void parseIn(char* input) {
 	if (strcmp(input, "make") == 0) {
 		if (currentRegister != NULL) { printf("register %s already made\n", currentRegister->name); }
 
