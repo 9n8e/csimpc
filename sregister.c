@@ -43,3 +43,9 @@ sregister* make_register(char *name) {
 
         return reg;
 }
+
+void cleanup() {
+	if (currentRegister != NULL) {
+		free(currentRegister);
+	}
+}

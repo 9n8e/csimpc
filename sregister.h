@@ -34,3 +34,4 @@ static sregister* currentRegister = NULL;
 
 void *reg_alloc(size_t);
 sregister* make_register(char*);
+void cleanup();
