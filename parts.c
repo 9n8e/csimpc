@@ -6,17 +6,17 @@
 
 int main() {
 	char in[256];
-	sregister* current = NULL;
+	// sregister* current = NULL;
 
 	while (getchar() != EOF) {
 		scanf("%s", in);
 		if (strcmp(in, "make") == 0) {
-			current = make_register("EAX");
-			printf("register %s made\n", current->name);
+			currentRegister = make_register("EAX");
+			printf("register %s made\n", currentRegister->name);
 		} else if (strcmp(in, "inc") == 0) {
-			if (current != NULL) {
-				current->vt->inc(current);
-				printf("register %s increased to %d\n", current->name, current->value);
+			if (currentRegister != NULL) {
+				currentRegister->vt->inc(currentRegister);
+				printf("register %s increased to %d\n", currentRegister->name, currentRegister->value);
 			} else {
 				printf("no current register found\n");
 			}
